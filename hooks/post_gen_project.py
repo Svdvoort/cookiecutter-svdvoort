@@ -48,7 +48,7 @@ def print_futher_instuctions():
 
 
 def setup_environment():
-    os.system("cd " + PROJECT_NAME)
+    # os.system("cd " + PROJECT_NAME)
     os.system("poetry install")
 
 
