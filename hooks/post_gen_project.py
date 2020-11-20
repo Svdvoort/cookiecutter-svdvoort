@@ -49,9 +49,13 @@ def print_futher_instuctions():
 
 def setup_environment():
     # os.system("cd " + PROJECT_NAME)
+    print("Installing packages")
     os.system("poetry install")
+
+    print("Setting up pre-commit")
+    os.system("pre-commit install")
 
 
 generate_license()
-print_futher_instuctions()
 setup_environment()
+print_futher_instuctions()
