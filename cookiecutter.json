@@ -5,6 +5,7 @@
 
   "license": "MIT",
 
+  "_extensions": ["jinja2_git.GitExtension"],
   "_copy_without_render": [
     ".venv",
     "docs/_build"
