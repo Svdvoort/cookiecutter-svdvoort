@@ -47,5 +47,11 @@ def print_futher_instuctions():
     print(textwrap.dedent(message.format(PROJECT_NAME)))  # noqa: WPS421
 
 
+def setup_environment():
+    os.system("cd " + PROJECT_NAME)
+    os.system("poetry install")
+
+
 generate_license()
 print_futher_instuctions()
+setup_environment()
