@@ -2,9 +2,8 @@ SHELL:=/usr/bin/env bash
 
 .PHONY: lint
 lint:
-	poetry run mypy {{ cookiecutter.project_name.lower().replace('-', '_') }} tests/**/*.py
-	poetry run flake8 .
-	poetry run doc8 -q docs
+	poetry run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+	poetry run flake8 . --count --exit-zero --statistics	
 
 .PHONY: unit
 unit:
@@ -14,8 +13,6 @@ unit:
 package:
 	poetry check
 	poetry run pip check
-	poetry run safety check --full-report
 
 .PHONY: test
 test: lint package unit
-
