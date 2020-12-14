@@ -19,6 +19,7 @@ PROJECT_NAME = '{{ cookiecutter.project_name }}'
 # We need these values to generate correct license:
 LICENSE = '{{ cookiecutter.license }}'
 ORGANIZATION = '{{ cookiecutter.organization }}'
+GIT_URL = '{{ cookiecutter.git_url }}'
 
 
 def generate_license():
@@ -51,6 +52,14 @@ def setup_environment():
     # os.system("cd " + PROJECT_NAME)
     print("Installing packages")
     os.system("poetry install")
+
+    print("Setting up git environment")
+    os.system("git init")
+    os.system("git add .")
+    os.system("git commit -m \"Initial commit\"")
+    os.system("git branch -M main")
+    os.system("git remote add origin")
+    os.system("git push -u origin main")
 
     print("Setting up pre-commit")
     os.system("pre-commit install")

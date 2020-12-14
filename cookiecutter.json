@@ -2,6 +2,7 @@
   "project_name": "my-awesome-project",
   "organization": "wemake.services",
   "project_description": "This is how python package should look like!",
+  "git_url": "git@github.com:example/example.git",
 
   "license": "MIT",
 
