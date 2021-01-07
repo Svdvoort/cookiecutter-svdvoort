@@ -1,9 +1,4 @@
-# wemake-python-package
-
-[![wemake.services](https://img.shields.io/badge/-wemake.services-green.svg?label=%20&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC%2FxhBQAAAAFzUkdCAK7OHOkAAAAbUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP%2F%2F%2F5TvxDIAAAAIdFJOUwAjRA8xXANAL%2Bv0SAAAADNJREFUGNNjYCAIOJjRBdBFWMkVQeGzcHAwksJnAPPZGOGAASzPzAEHEGVsLExQwE7YswCb7AFZSF3bbAAAAABJRU5ErkJggg%3D%3D)](https://github.com/wemake-services/wemake-python-package)
-[![Build status](https://github.com/wemake-services/wemake-python-package/workflows/test/badge.svg?branch=master&event=push)](https://github.com/wemake-services/wemake-python-package/actions?query=workflow%3Atest)
-[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/wemake-services/wemake-python-package/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
-[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
+# cookiecutter-svdvoort
 
 Bleeding edge [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) template to create new python packages.
 
@@ -12,7 +7,6 @@ Bleeding edge [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) t
 ## Purpose
 
 This project is used to scaffold a `python` project structure.
-Just like `poetry new` but better.
 
 
 ## Features
@@ -22,10 +16,12 @@ Just like `poetry new` but better.
 - [`poetry`](https://github.com/python-poetry/poetry) for managing dependencies
 - [`mypy`](https://mypy.readthedocs.io) for optional static typing
 - [`pytest`](https://github.com/pytest-dev/pytest) for testing
-- `flake8` and [`wemake-python-styleguide`](https://github.com/wemake-services/wemake-python-styleguide) for linting
-- `travis` or `Github Actions` as the default CI
+- `flake8` and numerous flake8 extensions for linting
+- `Github Actions` as the default CI
 - [`sphinx`](http://www.sphinx-doc.org/en/master/) and [`readthedocs.org`](https://readthedocs.org/) for documentation
-- Easy update process, so your template will always be up-to-date
+- [`black`](https://black.readthedocs.io/en/stable/) for automatic code formatting
+- [`pre-commit`](https://pre-commit.com/) to check for automatic formatting of your code and checking for errors before committing your changes
+- Automatic integration with Visual Studio Code to start working on your project 
 
 
 ## Installation
@@ -36,10 +32,15 @@ Firstly, you will need to install dependencies:
 pip install cookiecutter jinja2-git lice
 ```
 
+Make sure Python Poetry is installed, [check the installation instructions here](https://python-poetry.org/docs/#installation).
+
+You can set up an (empty) git repository to automatically get started. 
+Create new repository and copy the git link when asked during the set-up.
+
 Then, create a project itself:
 
 ```bash
-cookiecutter gh:wemake-services/wemake-python-package
+cookiecutter gh:Svdvoort/cookiecutter-svdvoort
 ```
 
 
