@@ -34,6 +34,12 @@ pip install cookiecutter jinja2-git lice
 
 Make sure Python Poetry is installed, [check the installation instructions here](https://python-poetry.org/docs/#installation).
 
+For integration with Visual Studio Code [install Visual Studio Code](https://code.visualstudio.com/download) and add the following extension packs:
+
+- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+
 You can set up an (empty) git repository to automatically get started. 
 Create new repository and copy the git link when asked during the set-up.
 
