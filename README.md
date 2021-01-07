@@ -49,6 +49,8 @@ Then, create a project itself:
 cookiecutter gh:Svdvoort/cookiecutter-svdvoort
 ```
 
+Now you can open the the project folder in Visual Studio Code and you are good to go! 
+
 
 ## License
 
