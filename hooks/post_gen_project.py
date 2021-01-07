@@ -58,11 +58,11 @@ def setup_environment():
     os.system("git add .")
     os.system("git commit -m \"Initial commit\"")
     os.system("git branch -M main")
-    os.system("git remote add origin")
+    os.system("git remote add origin {0}".format(GIT_URL))
     os.system("git push -u origin main")
 
     print("Setting up pre-commit")
-    os.system("pre-commit install")
+    os.system("poetry run pre-commit install")
 
 
 generate_license()
