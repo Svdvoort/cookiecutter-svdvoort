@@ -1,7 +1,7 @@
 {
-  "project_name": "my-awesome-project",
-  "organization": "wemake.services",
-  "project_description": "This is how python package should look like!",
+  "project_name": "my-project",
+  "organization": "Svdvoort",
+  "project_description": "My python package",
   "git_url": "git@github.com:example/example.git",
 
   "license": "MIT",
