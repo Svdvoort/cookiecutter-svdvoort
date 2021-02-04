@@ -1,11 +1,11 @@
 repos:
   - repo: https://github.com/psf/black
-    rev: stable
+    rev: 20.8b1
     hooks:
       - id: black
 
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.7.8
+    rev: 3.8.4
     hooks:
       - id: flake8
         args: ['--config=setup.cfg', '--count', '--select=E9,F63,F7,F82', '--show-source', '--statistics']
@@ -22,7 +22,7 @@ repos:
   #       exclude: ^.*/?setup\.py$
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v3.4.0
     hooks:
       - id: trailing-whitespace
         exclude: ^tests/.*/fixtures/.*
