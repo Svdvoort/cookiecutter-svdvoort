@@ -1,3 +1,5 @@
+SHELL:=/usr/bin/env bash
+
 patch_release:
 	$(eval poetry_output=$(shell poetry version patch))
 	@echo $(poetry_output)
@@ -30,3 +32,6 @@ clean:
 	@find . -type d -name '__pycache__' -exec rm -rf {} +
 	@find . -type d -name '*pytest_cache*' -exec rm -rf {} +
 	@find . -type f -name "*.py[co]" -exec rm -rf {} +
+
+.PHONY: test
+test: lint package unit
