@@ -38,7 +38,7 @@ darglint = "^1.2.3"
 
 black = "^21.4b0"
 
-mypy = "^0.902"
+mypy = "^0.910"
 
 pre-commit = "^2.4.0"
 
