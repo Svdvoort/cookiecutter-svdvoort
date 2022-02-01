@@ -36,7 +36,7 @@ xdoctest = "^0.15.0"
 
 darglint = "^1.2.3"
 
-black = "^21.4b0"
+black = "^22.1"
 
 mypy = "^0.931"
 
