@@ -27,7 +27,7 @@ classifiers = [
 python = ">=3.7.0,<3.9"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.1.2"
+pytest = "^7.0.0"
 pytest-memprof = "^0.2.0"
 pytest-cov = "^3.0.0"
 pytest-datafiles = "^2.0"
