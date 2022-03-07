@@ -8,15 +8,12 @@
   "python.linting.maxNumberOfProblems": 2000,
   "python.linting.mypyEnabled": true,
   "python.poetryPath": "${env:HOME}/.poetry/bin/poetry",
-  "python.testing.nosetestsEnabled": false,
   "python.testing.pytestArgs": [
     "tests",
     "--no-cov"
   ],
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
-  "restructuredtext.confPath": "${workspaceFolder}/docs/source",
-  "python.venvFolders": [
-    "${workspaceFolder}/.venv"
-  ]
+  "restructuredtext.confPath": "${workspaceFolder}/docs/",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
 }
