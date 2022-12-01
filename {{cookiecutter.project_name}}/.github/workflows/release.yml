@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Get tag
         id: tag
@@ -18,7 +18,7 @@ jobs:
           echo ::set-output name=tag::${GITHUB_REF#refs/tags/}
 
       - name: Set up Python 3.7
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: "3.7"
 
@@ -62,7 +62,7 @@ jobs:
           asset_content_type: application/octet-stream
 
       - name: Publish package to pypi
-        uses: pypa/gh-action-pypi-publish@v1.4.1
+        uses: pypa/gh-action-pypi-publish@v1
         with:
           user: __token__
           password: ${{ secrets.pypi_password }}
