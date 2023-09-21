@@ -8,4 +8,4 @@ m2r2==0.3.3
 tomlkit==0.12.1
 
 # Dependencies of our project:
-typing-extensions==4.7.1
+typing-extensions==4.8.0
