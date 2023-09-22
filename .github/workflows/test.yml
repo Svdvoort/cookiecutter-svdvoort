@@ -28,7 +28,7 @@ jobs:
         with:
           version: latest
           virtualenvs-create: true
-          virtualenvs-in-project: tre
+          virtualenvs-in-project: true
           installer-parallel: true
       #----------------------------------------------
       # Load cache if exists or otherwise set up
