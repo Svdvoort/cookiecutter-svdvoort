@@ -4,6 +4,41 @@ Bleeding edge [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) t
 
 ---
 
+## Installation
+
+Install [pyenv](https://github.com/pyenv/pyenv), and use it to install an appropiate python version.
+
+Install [python poetry](https://python-poetry.org/docs/#installation).
+To support the virtual environments within vscode easily, we need to make poetry create virtualenvs within the project:
+
+```bash
+poetry config virtualenvs.in-project true
+```
+
+Within your global python installation install the following packages:
+
+```bash
+pip install cookiecutter jinja2-git lice
+```
+
+For integration with Visual Studio Code [install Visual Studio Code](https://code.visualstudio.com/download) and add the following extension packs:
+
+- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+
+You can set up an (empty) git repository to automatically get started. 
+Create new repository and copy the git link when asked during the set-up.
+
+Then, create a project itself:
+
+```bash
+cookiecutter gh:Svdvoort/cookiecutter-svdvoort
+```
+
+Now you can open the the project folder in Visual Studio Code and you are good to go! 
+
+
 ## Purpose
 
 This project is used to scaffold a `python` project structure.
@@ -24,32 +59,6 @@ This project is used to scaffold a `python` project structure.
 - Automatic integration with Visual Studio Code to start working on your project 
 
 
-## Installation
-
-Firstly, you will need to install dependencies:
-
-```bash
-pip install cookiecutter jinja2-git lice
-```
-
-Make sure Python Poetry is installed, [check the installation instructions here](https://python-poetry.org/docs/#installation).
-
-For integration with Visual Studio Code [install Visual Studio Code](https://code.visualstudio.com/download) and add the following extension packs:
-
-- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
-
-You can set up an (empty) git repository to automatically get started. 
-Create new repository and copy the git link when asked during the set-up.
-
-Then, create a project itself:
-
-```bash
-cookiecutter gh:Svdvoort/cookiecutter-svdvoort
-```
-
-Now you can open the the project folder in Visual Studio Code and you are good to go! 
 
 
 ## License
