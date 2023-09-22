@@ -4,10 +4,12 @@ updates:
     directory: "/{{cookiecutter.project_name}}/"
     schedule:
       interval: daily
+    versioning-strategy: "increase"
   - package-ecosystem: pip
     directory: "/"
     schedule:
       interval: daily
+    versioning-strategy: "increase"
   - package-ecosystem: github-actions
     directory: "/.github/workflows"
     schedule:
