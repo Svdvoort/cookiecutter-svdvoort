@@ -53,6 +53,8 @@ jobs:
         run: poetry install --no-interaction
       #----------------------------------------------
       # Run tests
+      # Currently not running any tests on this local repo
+      # perhaps should implement some
       #----------------------------------------------
       - name: Run checks
         run: |
