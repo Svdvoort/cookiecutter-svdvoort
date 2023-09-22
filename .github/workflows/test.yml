@@ -1,45 +1,67 @@
 name: test
-
 on: [push, pull_request]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.7, 3.8, 3.9]
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
-      with:
-        python-version: ${{ matrix.python-version }}
+      #----------------------------------------------
+      # Check out repository
+      #----------------------------------------------
+      - name: Check-out repository
+        uses: actions/checkout@v4
+      #----------------------------------------------
+      # Set up python
+      # Correct python versions are loaded
+      # automatically from pyproject.toml
+      #----------------------------------------------
+      - name: Set up Python
+        id: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: pyproject.toml
+      #----------------------------------------------
+      # Install python poetry
+      #----------------------------------------------
+      - name: Install poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: false
+          virtualenvs-path: "{cache-dir}/virtualenvs"
+          installer-parallel: true
+      #----------------------------------------------
+      # Load cache if exists or otherwise set up
+      # the cache
+      #----------------------------------------------
+      - name: Set up cache
+        id: cached-poetry-dependencies
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('poetry.lock') }}
+      #----------------------------------------------
+      # Install dependencies if cache does not exist
+      #----------------------------------------------
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+      #----------------------------------------------
+      # Install root project
+      #----------------------------------------------
+      - name: Install project
+        run: poetry install --no-interaction
+      #----------------------------------------------
+      # Run tests
+      #----------------------------------------------
+      - name: Run checks
+        run: |
+          source .venv/bin/activate
 
-    - name: Install poetry
-      run: |
-        curl -sSL \
-          "https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py" | python
-
-    - name: Set up cache
-      uses: actions/cache@v3
-      with:
-        path: .venv
-        key: venv-${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}
-    - name: Install dependencies
-      run: |
-        source "$HOME/.poetry/env"
-
-        poetry config virtualenvs.in-project true
-        poetry install
-
-    - name: Run checks
-      run: |
-        source "$HOME/.poetry/env"
-
-        poetry run flake8 .
-        poetry run pytest
-        poetry run sh tests/test_integration.sh
-        poetry run poetry check
-        poetry run pip check
-        poetry run safety check --full-report
+          poetry run flake8 .
+          poetry run pytest
+          poetry run sh tests/test_integration.sh
+          poetry run poetry check
+          poetry run pip check
+          poetry run safety check --full-report

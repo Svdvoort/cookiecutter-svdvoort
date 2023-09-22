@@ -23,6 +23,11 @@ cookiecutter "$GITHUB_WORKSPACE" \
 
 cd "$PROJECT_NAME"
 
+# Create new venv:
+python -m venv .venv
+. .venv/bin/activate
+pip install -U pip
+
 # Testing the project:
-poetry install
-poetry run make test
+POETRY_VIRTUALENVS_CREATE=false poetry install
+make test
