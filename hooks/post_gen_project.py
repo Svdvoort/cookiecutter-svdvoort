@@ -51,7 +51,7 @@ def print_futher_instuctions():
 def setup_environment():
     # os.system("cd " + PROJECT_NAME)
     print("Installing packages")
-    os.system("poetry install --with dev, docs")
+    os.system("poetry install --with dev,docs")
 
     print("Setting up git environment")
     os.system("git init")
