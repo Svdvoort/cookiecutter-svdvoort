@@ -1,12 +1,6 @@
 {
   "editor.formatOnPaste": false,
   "python.envFile": "${workspaceFolder}/.env",
-  "python.formatting.provider": "black",
-  "python.linting.banditEnabled": false,
-  "python.linting.enabled": true,
-  "python.linting.flake8Enabled": true,
-  "python.linting.maxNumberOfProblems": 2000,
-  "python.linting.mypyEnabled": true,
   "python.poetryPath": "${env:HOME}/.poetry/bin/poetry",
   "python.testing.pytestArgs": [
     "tests",
