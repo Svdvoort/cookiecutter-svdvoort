@@ -19,7 +19,7 @@ jobs:
         id: setup-python
         uses: actions/setup-python@v4
         with:
-          python-version: pyproject.toml
+          python-version-file: pyproject.toml
       #----------------------------------------------
       # Install python poetry
       #----------------------------------------------
