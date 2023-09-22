@@ -28,8 +28,7 @@ jobs:
         with:
           version: latest
           virtualenvs-create: true
-          virtualenvs-in-project: false
-          virtualenvs-path: "{cache-dir}/virtualenvs"
+          virtualenvs-in-project: tre
           installer-parallel: true
       #----------------------------------------------
       # Load cache if exists or otherwise set up
