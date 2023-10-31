@@ -54,7 +54,7 @@ recommonmark = "^0.7.1"
 
 flake8 = "^4.0.1"
 flake8-2020 = "^1.6.0"
-flake8-aaa = "^0.16.0"
+flake8-aaa = "^0.17.0"
 flake8-annotations = "^2.1.0"
 flake8-annotations-complexity = "^0.0.8"
 flake8-annotations-coverage = "^0.0.6"
