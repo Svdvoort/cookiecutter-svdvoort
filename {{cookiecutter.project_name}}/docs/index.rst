@@ -5,9 +5,6 @@ Contents
 
 .. toctree::
   :maxdepth: 1
-  :caption: Changelog
-
-  pages/changelog.rst
 
 
 Indices and tables
