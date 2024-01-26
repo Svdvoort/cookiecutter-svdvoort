@@ -42,7 +42,7 @@ esbonio = "^0.16"
 
 darglint = "^1.2.3"
 
-black = "^23.1"
+black = "^24.1"
 
 mypy = "^1.0"
 
