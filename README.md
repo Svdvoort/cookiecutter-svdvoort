@@ -13,6 +13,7 @@ To support the virtual environments within vscode easily, we need to make poetry
 
 ```bash
 poetry config virtualenvs.in-project true
+poetry config virtualenvs.path "{project-dir}/.venv"
 ```
 
 Within your global python installation install the following packages:
