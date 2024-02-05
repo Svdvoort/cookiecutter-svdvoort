@@ -17,16 +17,12 @@ repos:
             "--statistics",
           ]
 
-  # isort and black seem incompatible at the moment
-  # They fight over white space so this always give an error
-  # ignore for now
-  # See here
-  # - repo: https://github.com/timothycrosley/isort
-  #   rev: 4.3.21-2
-  #   hooks:
-  #     - id: isort
-  #       additional_dependencies: [toml]
-  #       exclude: ^.*/?setup\.py$
+  - repo: https://github.com/pycqa/isort
+    rev: "5.13.2"
+    hooks:
+      - id: isort
+        additional_dependencies: [toml]
+        exclude: ^.*/?setup\.py$
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0
@@ -44,3 +40,11 @@ repos:
       - id: check-merge-conflict
       - id: check-yaml
       - id: check-toml
+  - repo: https://github.com/python-poetry/poetry
+    rev: "1.7.0"
+    hooks:
+      - id: poetry-check
+      - id: poetry-lock
+      - id: poetry-export
+        args:
+          ["-f", "requirements.txt", "-o", "requirements.txt", "--only", "main"]
