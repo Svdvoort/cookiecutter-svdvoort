@@ -24,7 +24,7 @@ jobs:
       # Create pull request to fix spellings
       #----------------------------------------------
 
-      - uses: peter-evans/create-pull-request@v5
+      - uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Fixes by misspell-fixer"
