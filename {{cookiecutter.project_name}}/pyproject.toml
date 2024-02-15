@@ -121,6 +121,11 @@ filter_files = true
 [tool.darglint]
 docstring_style = "google"
 
-[tool.dephell.main]
-from = { format = "poetry", path = "pyproject.toml" }
-to = { format = "setuppy", path = "setup.py" }
+[tool.bandit]
+skips = ["B101"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--xdoc --cov-report xml:coverage.xml --cov {{cookiecutter.project_name.lower().replace('-', '_')}}"
+env = "TF_CPP_MIN_LOG_LEVEL=2"
+markers = ["datafiles"]
