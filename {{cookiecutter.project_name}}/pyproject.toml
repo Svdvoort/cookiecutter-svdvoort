@@ -118,6 +118,7 @@ multi_line_output = 3
 use_parentheses = true
 skip_glob = ["*/setup.py"]
 filter_files = true
+profile = "black"
 
 [tool.darglint]
 docstring_style = "google"
