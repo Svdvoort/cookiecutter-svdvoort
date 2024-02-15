@@ -91,6 +91,7 @@ flake8-typing-imports = "^1.9.0"
 flake8-variables-names = "^0.0.6"
 pep8-naming = "^0.13.0"
 pandas-vet = "^0.2.2"
+toml = "^0.10.2"
 
 [tool.poetry.group.docs]
 optional = true
@@ -129,3 +130,6 @@ testpaths = ["tests"]
 addopts = "--xdoc --cov-report xml:coverage.xml --cov {{cookiecutter.project_name.lower().replace('-', '_')}}"
 env = "TF_CPP_MIN_LOG_LEVEL=2"
 markers = ["datafiles"]
+
+[tool.cruft]
+skip = [".git", ".venv", "poetry.lock"]
