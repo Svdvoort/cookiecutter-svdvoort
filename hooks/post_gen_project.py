@@ -14,18 +14,18 @@ import textwrap
 
 # Get the root project directory:
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
-PROJECT_NAME = '{{ cookiecutter.project_name }}'
+PROJECT_NAME = "{{ cookiecutter.project_name }}"
 
 # We need these values to generate correct license:
-LICENSE = '{{ cookiecutter.license }}'
-ORGANIZATION = '{{ cookiecutter.organization }}'
-GIT_URL = '{{ cookiecutter.git_url }}'
+LICENSE = "{{ cookiecutter.license }}"
+ORGANIZATION = "{{ cookiecutter.organization }}"
+GIT_URL = "{{ cookiecutter.git_url }}"
 
 
 def generate_license():
     """Generates license file for the project."""
     license_result = os.system(  # noqa: S605
-        'lice {0} -o {1} -p {2} > {3}/LICENSE'.format(
+        "lice {0} -o {1} -p {2} > {3}/LICENSE".format(
             LICENSE.lower(),
             ORGANIZATION,
             PROJECT_NAME,
@@ -56,10 +56,10 @@ def setup_environment():
     print("Setting up git environment")
     os.system("git init")
     os.system("git add .")
-    os.system("git commit -m \"Initial commit\"")
+    os.system('git commit -m "Initial commit"')
     os.system("git branch -M main")
     os.system("git remote add origin {0}".format(GIT_URL))
-    os.system("git push -u origin main")
+    # os.system("git push -u origin main")
 
     print("Setting up pre-commit")
     os.system("poetry run pre-commit install")
