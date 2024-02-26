@@ -57,14 +57,10 @@ def setup_environment():
     print("Setting up git environment")
 
     repo = Repo.init()
-    repo.index.add(["."])
+    repo.git.add(all=True)
     repo.index.commit("Initial commit")
     repo.git.checkout("-b", "main")
-    origin = repo.create_remote("origin", GIT_URL)
-    # origin.fetch()
-    # repo.create_head("main", origin.refs.main).set_tracking_branch(
-    #     origin.refs.main
-    # ).checkout()
+    repo.create_remote("origin", GIT_URL)
     repo.git.push("origin", "-u", "main")
 
     print("Setting up pre-commit")
