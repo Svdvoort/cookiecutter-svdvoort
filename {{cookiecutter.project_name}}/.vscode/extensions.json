@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "ms-python.black-formatter",
+    "EditorConfig.EditorConfig",
+    "ms-python.flake8",
+    "ms-python.isort",
+    "magicstack.MagicPython",
+    "ms-python.mypy-type-checker",
+    "ms-python.vscode-pylance",
+    "ms-python.pylint",
+    "ms-python.debugpy",
+    "KevinRose.vsc-python-indent"
+  ]
+}
