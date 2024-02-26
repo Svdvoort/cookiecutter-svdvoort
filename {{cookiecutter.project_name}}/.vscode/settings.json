@@ -18,5 +18,13 @@
       "source.organizeImports": "always"
     },
     "editor.defaultFormatter": "ms-python.black-formatter",
-  }
+  },
+  "esbonio.sphinx.buildDir": "${workspaceFolder}/docs/build",
+  "esbonio.sphinx.confDir": "${workspaceFolder}/docs",
+  "esbonio.sphinx.srcDir": "${workspaceFolder}/docs",
+  "restructuredtext.linter.doc8.executablePath": "${workspaceFolder}/.venv/bin/doc8",
+  "restructuredtext.linter.doc8.extraArgs": [
+    "--config",
+    "${workspaceFolder}/pyproject.toml"
+  ]
 }

@@ -9,6 +9,7 @@
     "ms-python.vscode-pylance",
     "ms-python.pylint",
     "ms-python.debugpy",
-    "KevinRose.vsc-python-indent"
+    "KevinRose.vsc-python-indent",
+    "lextudio.restructuredtext"
   ]
 }

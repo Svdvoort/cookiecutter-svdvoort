@@ -100,6 +100,8 @@ m2r2 = "^0.3.2"
 sphinx = "^7"
 sphinx-autodoc-typehints = "^2.0"
 sphinx-rtd-theme = "^2.0.0"
+doc8 = "^1.1.1"
+esbonio = "^0.16.4"
 
 [tool.black]
 line-length = 100
@@ -132,3 +134,7 @@ markers = ["datafiles"]
 
 [tool.cruft]
 skip = [".git", ".venv", "poetry.lock"]
+
+[tool.doc8]
+max-line-length = 100
+allow-long-titles = true
