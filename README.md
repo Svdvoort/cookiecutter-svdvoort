@@ -19,7 +19,7 @@ poetry config virtualenvs.path "{project-dir}/.venv"
 Within your global python installation install the following packages:
 
 ```bash
-pip install cookiecutter jinja2-git lice cruft[pyproject]
+pip install cookiecutter jinja2-git lice cruft[pyproject] GitPython
 ```
 
 For integration with Visual Studio Code [install Visual Studio Code](https://code.visualstudio.com/download) and add the following extension packs:

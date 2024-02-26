@@ -12,6 +12,8 @@ import os
 import sys
 import textwrap
 
+from git import Repo
+
 # Get the root project directory:
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 PROJECT_NAME = "{{ cookiecutter.project_name }}"
@@ -49,17 +51,17 @@ def print_futher_instuctions():
 
 
 def setup_environment():
-    # os.system("cd " + PROJECT_NAME)
     print("Installing packages")
     os.system("poetry install --with dev,docs")
 
     print("Setting up git environment")
-    os.system("git init")
-    os.system("git add .")
-    os.system('git commit -m "Initial commit"')
-    os.system("git branch -M main")
-    os.system("git remote add origin {0}".format(GIT_URL))
-    os.system("git push -u origin main")
+
+    repo = Repo.init()
+    repo.index.add(["."])
+    repo.index.commit("Initial commit")
+    repo.git.checkout("-b", "main")
+    origin = repo.create_remote("origin", GIT_URL)
+    origin.push()
 
     print("Setting up pre-commit")
     os.system("poetry run pre-commit install")
