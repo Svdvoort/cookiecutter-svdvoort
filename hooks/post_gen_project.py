@@ -58,13 +58,15 @@ def setup_environment():
 
     repo = Repo.init()
     repo.git.add(all=True)
-    repo.index.commit("Initial commit")
     repo.git.checkout("-b", "main")
+    repo.index.commit("Initial commit")
     repo.create_remote("origin", GIT_URL)
-    repo.git.push("origin", "-u", "main")
 
     print("Setting up pre-commit")
     os.system("poetry run pre-commit install")
+
+    repo.index.commit("Installed pre-commit")
+    repo.git.push("origin", "-u", "main")
 
 
 generate_license()
