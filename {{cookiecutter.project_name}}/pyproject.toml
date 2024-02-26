@@ -38,8 +38,6 @@ pytest-datafiles = "^3.0"
 pytest-xdist = "^3.0.2"
 xdoctest = "^1.0.0"
 
-esbonio = "^0.16"
-
 darglint = "^1.2.3"
 
 black = "^24.1"
