@@ -9,6 +9,8 @@
   "_extensions": ["jinja2_git.GitExtension"],
   "_copy_without_render": [
     ".venv",
-    "docs/_build"
+    "docs/_build",
+    "{{cookiecutter.project_name}}/.github/workflows/misspell.yml",
+    "{{cookiecutter.project_name}}/.github/workflows/test.yml"
   ]
 }
