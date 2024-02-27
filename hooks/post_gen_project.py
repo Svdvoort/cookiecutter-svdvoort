@@ -72,6 +72,8 @@ def setup_environment():
         repo.git.push("origin", "-u", "main")
     except git.exc.GitCommandError:
         # If we are using cruft, we don't need to push.
+        # Ugly solution, perhaps we need to think about this?
+        # TODO
         pass
 
 
