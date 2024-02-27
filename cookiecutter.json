@@ -11,6 +11,7 @@
     ".venv",
     "docs/_build",
     ".github/workflows/misspell.yml",
-    ".github/workflows/test.yml"
+    ".github/workflows/test.yml",
+    ".github/workflows/cruft_update.yml"
   ]
 }
