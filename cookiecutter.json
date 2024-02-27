@@ -10,7 +10,7 @@
   "_copy_without_render": [
     ".venv",
     "docs/_build",
-    "{{cookiecutter.project_name}}/.github/workflows/misspell.yml",
-    "{{cookiecutter.project_name}}/.github/workflows/test.yml"
+    ".github/workflows/misspell.yml",
+    ".github/workflows/test.yml"
   ]
 }
