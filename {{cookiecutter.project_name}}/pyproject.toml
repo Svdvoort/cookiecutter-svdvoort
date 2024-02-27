@@ -138,3 +138,4 @@ skip = [".git", ".venv", "poetry.lock"]
 [tool.doc8]
 max-line-length = 100
 allow-long-titles = true
+ignore = ["D001"]
