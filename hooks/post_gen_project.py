@@ -13,6 +13,7 @@ import sys
 import textwrap
 
 from git import Repo
+import git.exc
 
 # Get the root project directory:
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
@@ -66,7 +67,12 @@ def setup_environment():
     os.system("poetry run pre-commit install")
 
     repo.index.commit("Installed pre-commit")
-    repo.git.push("origin", "-u", "main")
+
+    try:
+        repo.git.push("origin", "-u", "main")
+    except git.exc.GitCommandError:
+        # If we are using cruft, we don't need to push.
+        pass
 
 
 generate_license()
