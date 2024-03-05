@@ -19,7 +19,7 @@ poetry config virtualenvs.path "{project-dir}/.venv"
 Within your global python installation install the following packages:
 
 ```bash
-pip install cookiecutter jinja2-git lice cruft[pyproject] GitPython
+pip install cookiecutter jinja2-git lice cruft[pyproject] GitPython toml
 ```
 
 For integration with Visual Studio Code [install Visual Studio Code](https://code.visualstudio.com/download) and add the following extension packs:
@@ -34,16 +34,18 @@ Create new repository and copy the git link when asked during the set-up.
 Then, create a project itself:
 
 ```bash
-cruft create git@github.com:Svdvoort/cookiecutter-svdvoort.git
+cruft create https://github.com/Svdvoort/cookiecutter-svdvoort.git
 ```
 
-Now you can open the the project folder in Visual Studio Code and you are good to go!
+Note: here we use the http-link instead of the git-link for create the project.
+This makes it easier for the github actions pipeline to find the project, no need to verify through SSH.
+However, you can use the git-link if you do not want to use the automatic update github action.
 
+Now you can open the the project folder in Visual Studio Code and you are good to go!
 
 ## Purpose
 
 This project is used to scaffold a `python` project structure.
-
 
 ## License
 
