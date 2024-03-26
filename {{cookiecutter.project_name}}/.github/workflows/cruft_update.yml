@@ -17,11 +17,6 @@ jobs:
             branch: cruft/update
             commit-message: "chore: accept new Cruft update"
             title: New updates detected with Cruft
-          - add-paths: .cruft.json
-            body: Use this to reject the changes in this repository.
-            branch: cruft/reject
-            commit-message: "chore: reject new Cruft update"
-            title: Reject new updates detected with Cruft
     steps:
       - uses: actions/checkout@v4
 
@@ -29,8 +24,23 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install Cruft
-        run: pip3 install cruft
+      #----------------------------------------------
+      # Install python poetry
+      #----------------------------------------------
+      - name: Install poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
+
+      #----------------------------------------------
+      # Install cookiecutter packages
+      #----------------------------------------------
+      - name: Install cookiecutter packages
+        run: |
+          pip3 install cruft jinja2-git lice gitpython toml
 
       - name: Check if update is available
         continue-on-error: false
@@ -38,7 +48,7 @@ jobs:
         run: |
           CHANGES=0
           if [ -f .cruft.json ]; then
-            if ! cruft check; then
+            if ! poetry run cruft check; then
               CHANGES=1
             fi
           else
@@ -53,7 +63,7 @@ jobs:
           git config --global user.email "you@example.com"
           git config --global user.name "GitHub"
 
-          cruft update --skip-apply-ask --refresh-private-variables
+          poetry run cruft update --skip-apply-ask --refresh-private-variables
           git restore --staged .
 
       - name: Create pull request
