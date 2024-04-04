@@ -17,7 +17,7 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": "always"
     },
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "esbonio.sphinx.buildDir": "${workspaceFolder}/docs/build",
   "esbonio.sphinx.confDir": "${workspaceFolder}/docs",

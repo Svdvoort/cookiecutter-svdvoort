@@ -103,6 +103,16 @@ sphinx-rtd-theme = "^2.0.0"
 doc8 = "^1.1.1"
 esbonio = "^0.16.4"
 
+[tool.poetry.group.cruft]
+optional = true
+
+[tool.poetry.group.cruft.dependencies]
+cruft = "^2.15.0"
+jinja2-git = "^1.3.0"
+lice = "^0.6"
+gitpython = "^3.1.43"
+
+
 [tool.black]
 line-length = 100
 target-version = ['py39', 'py310', 'py311']
