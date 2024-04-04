@@ -1,0 +1,35 @@
+{
+  "name": "python_development_container",
+  "dockerFile": "Dockerfile",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.watcherExclude": {},
+        "search.exclude": {},
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "python.poetryPath": "/etc/poetry/bin/poetry",
+        "python.defaultInterpreterPath": "/.pyenv/shims/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "EditorConfig.EditorConfig",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "magicstack.MagicPython",
+        "ms-python.mypy-type-checker",
+        "ms-python.vscode-pylance",
+        "ms-python.pylint",
+        "ms-python.debugpy",
+        "KevinRose.vsc-python-indent",
+        "lextudio.restructuredtext",
+        "trond-snekvik.simple-rst",
+        "streetsidesoftware.code-spell-checker",
+        "kamikillerto.vscode-colorize",
+        "shardulm94.trailing-spaces"
+      ]
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "sudo poetry install --with dev,docs &&  poetry run pre-commit install"
+}
