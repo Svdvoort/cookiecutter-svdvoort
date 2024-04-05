@@ -1,7 +1,6 @@
 FROM ubuntu:22.04
 
-# TODO: get this python version from the .python-version file
-ARG PYTHON_VERSION=3.11.8
+COPY .python-version .python-version
 ARG DEBIAN_FRONTEND=noninteractive
 
 
@@ -45,8 +44,8 @@ RUN apt update && apt install -y build-essential libssl-dev zlib1g-dev \
   libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 # Install python version
-RUN pyenv install ${PYTHON_VERSION}
-RUN pyenv global ${PYTHON_VERSION}
+RUN pyenv install
+RUN pyenv global $(cat .python-version)
 
 ###################################
 # Install python poetry

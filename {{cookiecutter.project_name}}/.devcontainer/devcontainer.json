@@ -1,6 +1,6 @@
 {
-  "name": "python_development_container",
-  "dockerFile": "Dockerfile",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
   "customizations": {
     "vscode": {
       "settings": {
@@ -26,10 +26,18 @@
         "trond-snekvik.simple-rst",
         "streetsidesoftware.code-spell-checker",
         "kamikillerto.vscode-colorize",
-        "shardulm94.trailing-spaces"
+        "shardulm94.trailing-spaces",
+        "tamasfe.even-better-toml",
+        "redhat.vscode-yaml",
+        "njpwerner.autodocstring",
+        "ms-azuretools.vscode-docker",
+        "github.vscode-github-actions",
+        "DavidAnson.vscode-markdownlint"
       ]
     }
   },
   "remoteUser": "vscode",
-  "postCreateCommand": "sudo poetry install --with dev,docs &&  poetry run pre-commit install"
+  "postCreateCommand": "sudo poetry install --with dev,docs &&  poetry run pre-commit install",
+  "workspaceFolder": "/workspace",
+  "overrideCommand": true
 }
