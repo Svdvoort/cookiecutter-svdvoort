@@ -1,8 +1,6 @@
 # CONFIGURATION -------------------------
 _templates_suffix: .jinja
-_skip_if_exists:
-  - CHANGELOG.md
-  - CREDITS.md
+_subdirectory: project_name
 _tasks:
   - lice {{ license.lower() }} -o {{ organization }} -p {{ project_name }} > {{ project_name }}/LICENSE
   - poetry install --with dev,docs
