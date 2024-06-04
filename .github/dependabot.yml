@@ -1,20 +1,11 @@
 version: 2
 updates:
   - package-ecosystem: pip
-    directory: "/{{cookiecutter.project_name}}/"
-    schedule:
-      interval: daily
-    versioning-strategy: "increase"
-  - package-ecosystem: pip
     directory: "/"
     schedule:
       interval: daily
     versioning-strategy: "increase"
   - package-ecosystem: github-actions
     directory: "/.github/workflows"
-    schedule:
-      interval: daily
-  - package-ecosystem: github-actions
-    directory: "/{{cookiecutter.project_name}}/.github/workflows"
     schedule:
       interval: daily

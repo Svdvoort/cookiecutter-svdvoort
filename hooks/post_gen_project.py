@@ -17,12 +17,12 @@ import git.exc
 
 # Get the root project directory:
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
-PROJECT_NAME = "{{ cookiecutter.project_name }}"
+PROJECT_NAME = "{{ project_name }}"
 
 # We need these values to generate correct license:
-LICENSE = "{{ cookiecutter.license }}"
-ORGANIZATION = "{{ cookiecutter.organization }}"
-GIT_URL = "{{ cookiecutter.git_url }}"
+LICENSE = "{{ license }}"
+ORGANIZATION = "{{ organization }}"
+GIT_URL = "{{ git_url }}"
 
 
 def generate_license():

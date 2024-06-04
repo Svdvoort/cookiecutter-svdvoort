@@ -57,8 +57,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/{% endraw %}{{ cookiecutter.project_name }}{% raw %}-${{ steps.tag.outputs.tag }}-py3-none-any.whl
-          asset_name: {% endraw %}{{ cookiecutter.project_name }}{% raw %}_${{ steps.tag.outputs.tag }}.whl
+          asset_path: dist/{% endraw %}{{ project_name }}{% raw %}-${{ steps.tag.outputs.tag }}-py3-none-any.whl
+          asset_name: {% endraw %}{{ project_name }}{% raw %}_${{ steps.tag.outputs.tag }}.whl
           asset_content_type: application/octet-stream
 
       - name: Publish package to pypi

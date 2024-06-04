@@ -1,0 +1,43 @@
+# CONFIGURATION -------------------------
+_templates_suffix: .jinja
+_skip_if_exists:
+  - CHANGELOG.md
+  - CREDITS.md
+_tasks:
+  - lice {{ license.lower() }} -o {{ organization }} -p {{ project_name }} > {{ project_name }}/LICENSE
+  - poetry install --with dev,docs
+  - git init
+  - git add .
+  - git checkout -b main
+  - git commit -m "Initial commit"
+  - git remote add origin {{ git_url }}
+  - poetry run pre-commit install
+  - git push origin -u main
+
+# PROMPT --------------------------------
+project_name:
+  type: str
+  help: Your project name
+
+project_description:
+  type: str
+  help: Your project description
+
+organization:
+  type: str
+  help: Your project description
+  default: Svdvoort
+
+git_url:
+  type: str
+  help: URL of the git repository
+
+license:
+  type: str
+  help: License for code
+  default: MIT
+
+python_version:
+  type: str
+  help: Python version intended for the project
+  default: 3.11.9

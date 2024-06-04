@@ -3,16 +3,16 @@ requires = ["poetry-core>=1.6.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "{{ cookiecutter.project_name }}"
-description = "{{ cookiecutter.project_description }}"
+name = "{{ project_name }}"
+description = "{{ project_description }}"
 version = "0.1.0"
-license = "{{ cookiecutter.license|upper }}"
+license = "{{ license|upper }}"
 
 authors = []
 
 readme = "README.md"
 
-repository = "https://github.com/{{ cookiecutter.organization }}/{{ cookiecutter.project_name }}"
+repository = "https://github.com/{{ organization }}/{{ project_name }}"
 
 keywords = []
 
@@ -138,7 +138,7 @@ skips = ["B101"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--xdoc --cov-report xml:coverage.xml --cov {{cookiecutter.project_name.lower().replace('-', '_')}}"
+addopts = "--xdoc --cov-report xml:coverage.xml --cov {{project_name.lower().replace('-', '_')}}"
 env = "TF_CPP_MIN_LOG_LEVEL=2"
 markers = ["datafiles"]
 
