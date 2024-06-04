@@ -44,8 +44,8 @@ RUN apt update && apt install -y build-essential libssl-dev zlib1g-dev \
   libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 # Install python version
-RUN pyenv install
-RUN pyenv global $(cat .python-version)
+RUN pyenv install $(cat .python-version | tr -d '\r')
+RUN pyenv global $(cat .python-version | tr -d '\r')
 
 ###################################
 # Install python poetry
