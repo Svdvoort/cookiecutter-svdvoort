@@ -1,6 +1,8 @@
 # CONFIGURATION -------------------------
 _templates_suffix: .jinja
 _subdirectory: project_name
+_jinja_extensions:
+  - jinja2_time.TimeExtension
 _tasks:
   - lice {{ license.lower() }} -o {{ organization }} -p {{ project_name }} > {{ project_name }}/LICENSE
   - poetry install --with dev,docs

@@ -19,7 +19,7 @@ poetry config virtualenvs.path "{project-dir}/.venv"
 Within your global python installation install the following packages:
 
 ```bash
-pip install copier
+pip install copier jinja2 jinja2-time
 ```
 
 For integration with Visual Studio Code [install Visual Studio Code](https://code.visualstudio.com/download) and add the following extension packs:
