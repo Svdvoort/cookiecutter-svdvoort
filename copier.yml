@@ -25,7 +25,7 @@ project_description:
 
 organization:
   type: str
-  help: Your project description
+  help: The git organization
   default: Svdvoort
 
 git_url:
