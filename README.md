@@ -1,6 +1,6 @@
 # cookiecutter-svdvoort
 
-Bleeding edge [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) template to create new python packages.
+[Copier](https://copier.readthedocs.io) template for Python
 
 ---
 
@@ -19,7 +19,7 @@ poetry config virtualenvs.path "{project-dir}/.venv"
 Within your global python installation install the following packages:
 
 ```bash
-pip install cookiecutter jinja2-git lice cruft[pyproject] GitPython toml
+pip install copier
 ```
 
 For integration with Visual Studio Code [install Visual Studio Code](https://code.visualstudio.com/download) and add the following extension packs:
@@ -34,10 +34,10 @@ Create new repository and copy the git link when asked during the set-up.
 Then, create a project itself:
 
 ```bash
-cruft create https://github.com/Svdvoort/cookiecutter-svdvoort.git
+copier copy https://github.com/Svdvoort/cookiecutter-svdvoort.git /path/to/repo
 ```
 
-Note: here we use the http-link instead of the git-link for create the project.
+Note: here we use the http-link instead of the git-link to create the project.
 This makes it easier for the github actions pipeline to find the project, no need to verify through SSH.
 However, you can use the git-link if you do not want to use the automatic update github action.
 

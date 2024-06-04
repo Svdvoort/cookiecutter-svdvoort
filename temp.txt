@@ -1,8 +1,0 @@
-
-
-hooks/post_gen_project.py:PROJECT_NAME = "{{ cookiecutter.project_name }}"
-hooks/post_gen_project.py:LICENSE = "{{ cookiecutter.license }}"
-hooks/post_gen_project.py:ORGANIZATION = "{{ cookiecutter.organization }}"
-hooks/post_gen_project.py:GIT_URL = "{{ cookiecutter.git_url }}"
-hooks/pre_gen_project.py:MODULE_NAME = '{{ cookiecutter.project_name }}'
-tests/test_project_generation.py:RE_OBJ = re.compile(r'{{(\s?cookiecutter)[.](.*?)}}')
