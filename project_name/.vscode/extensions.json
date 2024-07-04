@@ -1,15 +1,24 @@
 {
   "recommendations": [
-    "ms-python.black-formatter",
+    "ms-python.python",
     "EditorConfig.EditorConfig",
-    "ms-python.flake8",
-    "ms-python.isort",
     "magicstack.MagicPython",
     "ms-python.mypy-type-checker",
     "ms-python.vscode-pylance",
-    "ms-python.pylint",
     "ms-python.debugpy",
     "KevinRose.vsc-python-indent",
-    "lextudio.restructuredtext"
+    "lextudio.restructuredtext",
+    "trond-snekvik.simple-rst",
+    "streetsidesoftware.code-spell-checker",
+    "kamikillerto.vscode-colorize",
+    "shardulm94.trailing-spaces",
+    "tamasfe.even-better-toml",
+    "redhat.vscode-yaml",
+    "njpwerner.autodocstring",
+    "ms-azuretools.vscode-docker",
+    "github.vscode-github-actions",
+    "DavidAnson.vscode-markdownlint",
+    "ms-vscode-remote.remote-containers",
+    "charliermarsh.ruff"
   ]
 }
