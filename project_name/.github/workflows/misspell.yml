@@ -1,4 +1,4 @@
-name: misspell
+name: Typo fixes
 
 on:
   workflow_dispatch:

@@ -12,14 +12,10 @@
       },
       "extensions": [
         "ms-python.python",
-        "ms-python.black-formatter",
         "EditorConfig.EditorConfig",
-        "ms-python.flake8",
-        "ms-python.isort",
         "magicstack.MagicPython",
         "ms-python.mypy-type-checker",
         "ms-python.vscode-pylance",
-        "ms-python.pylint",
         "ms-python.debugpy",
         "KevinRose.vsc-python-indent",
         "lextudio.restructuredtext",
@@ -32,7 +28,8 @@
         "njpwerner.autodocstring",
         "ms-azuretools.vscode-docker",
         "github.vscode-github-actions",
-        "DavidAnson.vscode-markdownlint"
+        "DavidAnson.vscode-markdownlint",
+        "charliermarsh.ruff"
       ]
     }
   },
