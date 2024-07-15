@@ -34,7 +34,7 @@ Create new repository and copy the git link when asked during the set-up.
 Then, create a project itself:
 
 ```bash
-copier copy https://github.com/Svdvoort/cookiecutter-svdvoort.git /path/to/repo
+copier copy --trust https://github.com/Svdvoort/cookiecutter-svdvoort.git /path/to/repo
 ```
 
 Note: here we use the http-link instead of the git-link to create the project.
