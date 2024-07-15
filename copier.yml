@@ -4,7 +4,7 @@ _subdirectory: project_name
 _jinja_extensions:
   - jinja2_time.TimeExtension
 _tasks:
-  - bash .project_init.sh
+  - bash .project_init.sh {{ license.lower() }} {{ organization }} {{ project_name }} {{ project_name }} {{ git_url }}
   - poetry run pre-commit install
 
 # PROMPT --------------------------------

@@ -10,10 +10,10 @@ if [ -d .git/ ]; then
   exit 0
 fi
 
-lice {{ license.lower() }} -o {{ organization }} -p {{ project_name }} > {{ project_name }}/LICENSE
+lice $1 -o $2 -p $3 > $3/LICENSE
 poetry install --with dev,docs
 git init
 git add .
 git checkout -b main
 git commit -m "Initial commit"
-git remote add origin {{ git_url }}
+git remote add origin $4
