@@ -7,27 +7,53 @@ _tasks:
   - bash .project_init.sh {{ license.lower() }} {{ organization }} {{ project_name }} {{ git_url }} {{ python_version }}
 
 # PROMPT --------------------------------
+git_url:
+  type: str
+  help: URL of the git repository
+
+organization:
+  type: str
+  help: The git organization
+  default: >-
+    {{ git_url | regex_search(':(\w*)\/', '\\1') | first | trim(chars="\n") }}
+
 project_name:
   type: str
   help: Your project name
+  default: >-
+    {{ git_url | regex_search('\/(\w*)\.git', '\\1') | first | trim(chars="\n") }}
 
 project_description:
   type: str
   help: Your project description
 
-organization:
-  type: str
-  help: The git organization
-  default: Svdvoort
-
-git_url:
-  type: str
-  help: URL of the git repository
-
 license:
-  type: str
-  help: License for code
-  default: MIT
+  # type: str
+  # help: License for code
+  # default: MIT
+  choices:
+    - AFL3
+    - AGPL3
+    - Apache
+    - BSD2
+    - BSD3
+    - CC0
+    - CC_BY
+    - CC_BY_NC
+    - CC_BY_NC_ND
+    - CC_BY_NC_SA
+    - CC_BY_ND
+    - CC_BY_SA
+    - CDDL
+    - EPL
+    - GPL2
+    - GPL3
+    - ISC
+    - LGPL
+    - MIT
+    - MPL
+    - WFTPL
+    - ZLIB
 
 python_version:
   type: str
