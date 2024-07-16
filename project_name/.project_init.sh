@@ -11,9 +11,20 @@ if [ -d .git/ ]; then
 fi
 
 lice $1 -o $2 -p $3 > $3/LICENSE
-poetry install --with dev,docs
-git init
+
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+pyenv install -s $5
+pyenv local $5
+pyenv shell $5
+pyenv exec pip install poetry
+poetry env use $5
+poetry install --with dev,docs,cruft
+
+git init --initial-branch="main"
 git add .
-git checkout -b main
 git commit -m "Initial commit"
 git remote add origin $4
+git push --set-upstream origin main
+
+poetry run pre-commit install
