@@ -9,3 +9,12 @@ updates:
     directory: "/.github/workflows"
     schedule:
       interval: daily
+
+  - package-ecosystem: pip
+    directory: "/project_name"
+    schedule:
+      interval: daily
+  - package-ecosystem: github-actions
+    directory: "/project_name/.github/workflows"
+    schedule:
+      interval: daily
